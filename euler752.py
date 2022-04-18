@@ -72,10 +72,14 @@ def G(N):
         total += g(n)
     return total
 
-for ii in range(2, 30):
+
+for ii in range(2, 40):
     start_time = time()
     result_1 = g(ii)
     print(time() - start_time, result_1)
     start_time = time()
     result_2 = g_2(ii)
     print(time() - start_time, result_2)
+
+start_time = time()
+print(G(100), time() - start_time)
