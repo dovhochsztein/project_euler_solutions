@@ -266,15 +266,15 @@ def repeat_simulations_assuming_given_number_of_flips(strategy, bias=0.6, flips 
     return prob
 
 
-def iterate_for_minimal_flips(strategy, bias=0.6, lim=200, threshold=0.75, start=100, end=150):
+def iterate_for_minimal_flips(strategy, bias=0.6, lim=1000, threshold=0.75, start=95, end=150):
     for flips in range(start, end):
         prob = repeat_simulations_assuming_given_number_of_flips(strategy, bias, flips, lim)
         if prob > threshold:
             return flips
 
 
-iterate_for_minimal_flips(Strategy())
-iterate_for_minimal_flips(NaiveStrategy())
+print(iterate_for_minimal_flips(Strategy()))
+print(iterate_for_minimal_flips(NaiveStrategy()))
 
 
 def repeat_simulations_assuming_adaptive_number_of_flips(strategy, threshold=0.75, bias=0.6, lim=1000):
